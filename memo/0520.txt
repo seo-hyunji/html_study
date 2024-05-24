@@ -1,0 +1,29 @@
+요소+요소 { 속성:값; }
+
+여백
+1)내부여백 padding (패딩코드}
+2)외부여백 margin 
+
+단축코딩이다.
+padding:20px;
+=
+padding-top:20px
+padding-right:20px;
+padding-bottom:20px;
+padding-left:20px;
+
+(블록요소)태그 내에 기본으로 들어간 속성
+header {display : block; width:100%;}
+width:100%; = 부모요소 넓이를 모두 사용한다
+
+header {border:3px solid gray;}
+{선: 굵기 스타일 색; }
+border 속성은 단축속성이다.
+정규속성은 잘 안 씀
+
+디지털 이미지 표현의 최소 단위
+
+<style>
+     선택자 { 속성 : 값;  속성 : 값;  속성 : 값; } 
+    selector { property : value;  property : value; property : value; }
+</style>

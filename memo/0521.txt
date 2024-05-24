@@ -1,0 +1,144 @@
+조상 부모
+고조부 증조부 부모
+
+- 조상 중에 div가 있다 -
+div   div {속성: 값; ~~~}
+
+- 부모가 div 이다 -
+div > div
+
+
+- 2.5 대 1의 비율로 넓이를 확장한다 -
+nav + div {border:3px double blue; display:flex;}   <!--부모-->
+div > div {border:5px solid green; flex:2.5;}   <!--자식-->
+aside {background: #ddd; flex:1;}   <!--자식-->
+
+
+웹 브라우저 > 마우스 우클릭 > 검사 > toggle device toolbar (ctrl + shift + M) > dimensions Responsive
+
+
+주석(comment)의 종류
+1. HTML
+   <!--메모-->
+2. CSS
+   /*메모*/
+3. Javascript
+   /*메모*/ (여러 줄 메모 가능)
+   //메모 (한 줄 메모만 가능)
+
+
+- 참고 사이트 -
+w3schools.com
+
+
+최대 넓이값 / 최소 넓이값
+1) 최대 넓이값 : 최대한 허용되는 범위의 넓이의 값 
+   최대 넓이 600픽셀이라면 
+   0은 허용되고 600도 허용되고 601부터 안됨.
+2) 최소 넓이값 : 최소한 허용되는 범위의 넓이의 값
+   최소넓이 601 픽셀이라면
+   600은 허용되지 않고 601은 허용됨
+   
+가운데 정렬은 외부 여백기능으로 구현할 수 있다.
+div {max-width:700px; margin:auto;}
+margin 속성은 단축이다
+정규 방식은
+margin-top:auto;
+margin-right:auto;
+margin-bottom:auto;
+margin-left:auto;
+
+px 단위는 디지털 이미지 표현의 최소 단위이다. (소수점 불가능)
+pt(포인트)는 픽셀보다 1.25배 정도 크다. 0.75pt (소수점 가능)
+
+heading 태그와 b 태그의 공통점
+<h1>~<h6> / <b>
+폰트체가 굵어진다.
+
+
+선 디자인
+   border
+   선 스타일
+      solid 실선
+      dotted 동그란 점선
+      dashed 긴점선
+      double 이중선
+
+여백
+1. 내부 여백 : 콘테이너  안쪽 여백 padding
+2. 외부 여백 :  콘테이너 바깥쪽 여백 margin
+
+
+반투명 색상
+   색 정의 3가지 방법
+   1) 색상 이름 : pink
+   2) 색상 코드값
+       1. 16진수 #000000
+           정보를 표현할 때, 1진수는 없다
+           2진수 (0,1)
+           -  하나의 자리에 2가지의 정보를 표현할 수 있다.
+           10진수 (실제 수 0,1,2,3,4,5,6,7,8,9)
+           -  하나의 자리에 10가지의 정보를 표현할 수 있다.
+           16진수 (0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f)
+           -  하나의 자리에 16가지의 정보를 표현할 수 있다.    
+	# 00   00   00
+	   R    B     G   (색전구)
+	#ff0000 빨간색
+	#00ff00 파란색
+	#0000ff 초록색
+	#ffffff    흰색
+
+       2. RGB
+          웹색상(명도+채도)단계 0~255까지 총 256단계
+	RGBA (alpha 0 투명 / 1 불투명 0.5 반투명 / 0.2 매우 살짝 보임)
+	rgba(255,0,0, 0.5)
+
+
+가상선택자 
+:hover는 2가지 기능이 포한 되어 있다.
+1. 마우스를 갖다 댈 때
+2. 마우스를 치울 때 (restore, 원래 모습으로 복귀)
+
+p {속성:값 transition: 0.5s;}
+p:hover {속성:값;}
+호버 스타일에 장면전환효과처럼 자연스러운 움직임
+transform: 
+transition:
+transition: 0.5s; 는 호버 부분에 하면 안된다
+
+<b> 태그는 블록 요소가 아니다.
+b {display: inline;} //인라인 레벨 엘리먼트
+인라인 요소에 트랜스폼 기능을 부여하려면
+인라인 성질을 변경해야 한다.
+인라인 성질을 유지한 채 블록 기능을 추가할 수 있다.
+{display: inline-block;}
+
+
+svg 그래픽
+벡터 그래픽이다.
+vector graphic이란?
+수학적 방식에 의하여 그래픽을 형성하는 방식
+확대하거나 축소하더라도 그래픽의 화질변화가 없다.
+계단현상이 없다.
+
+<img src="images/logo.jpg" alt="네이버로고">
+img 태그는 단일 태그이며 인라인 태그이다.
+
+
+[href*=naver]
+
+img는 {display:inline;}
+a도 {display:inline;}
+
+부모가 {text-align: center;}하면
+그 자손들은 모두 부모 넓이의 가로 방향 중앙 배치된다.
+하지만 안 될때도 있다.
+자손중에 {display:block;} 성질이라면 중앙 정렬 안된다.
+
+- not 가상 선택자 - 
+요소:not(조건) // 해당 조건이 아닌 요소들에 적용.
+p:not(:first-child) // 첫째 자식이 아닌 모든 p에 적용.
+
+- 참조 사이트 - 
+구글 지도 > 공유 > 지도 퍼가기 > HTML 복사
+구글 웹 폰트 > get font > get embed code > [ Embed code in the <head> of your html ] copy code > head에 붙여넣기 > CSS Class style 태그에 붙여넣기
