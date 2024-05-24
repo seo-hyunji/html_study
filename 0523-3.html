@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼태그 연습하기</title>
+    <style>
+        img      {max-width: 100%;}
+        #layout1 {max-width: 900px; margin: auto;}
+        header   {background: linear-gradient(rgb(255, 171, 93),rgb(255, 120, 120)); padding: 20px;} 
+        header h1 {margin: 0; text-align: center;}
+        nav       {
+            height: 300px;
+            background: radial-gradient(circle, rgb(255, 0, 0), #ffe600, rgb(60, 29, 168)60%);
+            margin: 20px auto; border-radius: 30px;
+            transition: 2.5s;
+        }
+        nav:hover {
+            background:radial-gradient(circle, red 33%, yellow 60%, blue);
+            /*transform: rotate(30deg);*/
+        }
+        
+        
+        #layout2  {display: flex;}
+        #layout2 p {margin: 0;}
+        #layout2 p::first-letter {font-size: 2rem; border: 2px (255,255,255,0.1);background-color: rgb(255,255,255,0.5); border-radius: 10px; padding-left: 10px; padding-right: 10px;}
+        /*#layout2 p:hover::first-letter background-color:(255,255,255,1)}*/
+        main      {background-color: rgb(172, 224, 119); padding: 20px; flex: 2; }
+        main h2   {margin: 0;}
+        /*main p:hover {background-color: red;}*/
+        aside     {background-color: rgb(113, 221, 224); padding: 20px; flex: 1;}
+        aside h3 {margin: 0;}
+        footer   {background-color: grey; padding: 20px; text-align: center;}
+        footer h3 {margin: 0;}
+
+        /* 폼태그 부분 */
+        form {flex: 1; /*border: 1px solid red;*/ max-width: 220px; margin: auto; margin-right: 0; display: flex; align-items: center;}
+        form div {flex: 1; /*border: 1px solid blue;*/}
+        form input {display: block}
+        [type="text"] {margin-bottom: 5px; border-radius: 5px; scale: 1.1; text-align: center;}
+        [type="password"] {border-radius: 5px; scale: 1.1; text-align: center;}
+        form div input {width: 150px;}
+        [type="submit"] {background: yellowgreen; border: 2px solid rgb(148, 219, 41); height: 50px; width: 45px; border-radius: 5px; }
+        [type="submit"]:hover {transform: scale(0.95); border-color: rgb(148, 219, 41); background: rgb(117, 161, 50);}
+
+
+        /* 반응형 부분 (작은 기계장치의 적용되는 최대 넓이는 0~550px 크기) */
+        @media (max-width: 550px) {
+            #layout2 {flex-direction: column;}
+        }
+    </style>
+</head>
+<body>
+    <div id="layout1">
+        <header>
+            <h1>상단영역</h1>
+            <form action="#" method="post">
+                <div>
+                    <input type="text" placeholder="아이디를 입력하세요">
+                    <input type="password" placeholder="비밀번호를 입력하세요">
+                </div>
+                    <input type="submit" value="확인">
+            </form>
+        </header>
+        <nav></nav>
+        <div id="layout2">
+            <main>
+                <h2>메인영역</h2>
+                <p>헌법재판소의 장은 국회의 동의를 얻어 재판관중에서 대통령이 임명한다. 모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다.</p>
+                <p>모든 국민은 헌법과 법률이 정한 법관에 의하여 법률에 의한 재판을 받을 권리를 가진다. 모든 국민은 행위시의 법률에 의하여 범죄를 구성하지 아니하는 행위로 소추되지 아니하며, 동일한 범죄에 대하여 거듭 처벌받지 아니한다.</p>
+                <p>탄핵결정은 공직으로부터 파면함에 그친다. 그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다. 이 헌법공포 당시의 국회의원의 임기는 제1항에 의한 국회의 최초의 집회일 전일까지로 한다.</p>
+            </main>
+            <aside>
+                <h3>부가영역</h3>
+                <p>대한민국은 통일을 지향하며, 자유민주적 기본질서에 입각한 평화적 통일 정책을 수립하고 이를 추진한다. 대통령은 법률이 정하는 바에 의하여 훈장 기타의 영전을 수여한다.</p>
+                <p>국가원로자문회의의 의장은 직전대통령이 된다. 다만, 직전대통령이 없을 때에는 대통령이 지명한다. 헌법에 의하여 체결·공포된 조약과 일반적으로 승인된 국제법규는 국내법과 같은 효력을 가진다.</p>
+            </aside>
+        </div>
+        <footer>
+            <h3>하단정보</h3>
+            <img src="images/summer.jpg" alt="여름">
+        </footer>
+    </div>
+</body>
+</html>

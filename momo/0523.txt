@@ -1,0 +1,102 @@
+<style>
+   선택자 {속성: 속성값;}
+</style>
+
+
+w3c - 웹표준 HTML5
+
+
+- 괄호의 종류 -
+[   ] 대괄호
+{   } 중괄호
+(   ) 소괄호
+<  > 꺽쇠 괄호
+^     케럿 (삿갓)
+:      콜론
+;      세미콜론
+"   "  큰 따옴표
+'    ' 작은 따옴표
+
+
+선택자 {속성: 값; 속성: 값;}
+{속성: 값}
+border 속성은 단축속성이다. (짧게 적는다)
+border: 값1 값2 값3;
+
+heading, p 태그에는 기본적으로 바깥 여백이 생긴다.
+각각 태그에 margin: 0; 하면 사라진다.
+혹은 div로 블럭걸고 div p {margin: 0;} or div h {margin: 0;}
+
+첫글자 스타일링
+p::first-letter {font-size: 2rem; border: 2px solid red;}
+
+- 투명 배경하는 법 -
+{background: rgb (255,255,255,0.5);}
+
+
+- em과 rem -
+1. 2em 몇배의 기준 부모 요소의 크기 2배
+2. 2rm body 기준 폰트 크기의 2배
+   (body에 특별하게 설정된 값이 없다면,
+   렌더링 브라우저에 설정된 기본 폰트 크기의 2배)
+
+- 첫글자 스타일링 -
+선택자::가상(가짜)선택자
+콜론을 하나만 찍는 가상 선택자의 특징 : 태그 전체에 효과가 적용됨
+콜론을 두 번 찍는 가상 선택자의 특징 :: 태그 일부분에 효과가 적용됨)
+   (콜론 두 번 찍는 가상 선택자는 호버가 안된다)
+p::first-letter {font-size: 2rem; border: 2px solid red;}
+{background: rgba{0,0,255,0.5);}
+
+::before 라는 가상 선택자는 콜론을 2번 찍고 
+해당 요소의 일부분(앞부분)에 텍스트가 입력된다.
+
+::after 는 뒷부분에 텍스트 추가.
+
+font-weight : 폰트 굵기
+
+
+body > * 선택자는 body의 모든 자식 (child). 자손 아님.
+> 꺽쇠
+* 별 (아스테리스크) : 모든 요소
+
+- :hover, ::first-latter or ::last-latter 둘 다 적용 방법 -
+식별자:hover::first-letter { }
+식별자:hover::last-letter { }
+
+
+- 방사형(타원형)그라디언트 -
+background: radial-gradient( red, green, blue);
+
+- 방사형(원형)그라디언트 -
+background: radial-gradient(circle, red, green, blue);
+
+method= 
+post (암호화)
+get 
+
+
+- 오른쪽 정렬 -
+1. 오른쪽 정렬의 대상이 불록요소여야 한다.
+2. 외부 여백으로 연구 시작한다
+   {margin: auto; margin-right: 0;}
+
+img      {max-width: 100%;} // 이미지는 부모보다 클 수 없도록 설정
+
+부모요소가 {display: flex;}
+자식 요소들 중에서 가장 높이 높은 요소 만큼 
+다른 자식 요소들의 높이가 높아지는 현상이 생긴다.
+특정 자식에 {flex: 1;} -> 특정 자식의 넓이만 유독 넓어진다.
+다른 자식들은 좁은 채 그대로 있다.
+flex: 1; 의 개념은 부모 영역에서 남은 영역 모두를 할당 받는다.
+(flex-grow: 1; 기능이 포함되어 있다)
+
+flex 속성은 단축속성이다.
+flex:-glow: ; /*부풀다(확장)*/
+flex-shrink: ; /*쪼그라들다(수축)*/
+flex-basis: ; /*넓이(width 비슷)*/
+
+{flex: 1;}
+//영문 텍스트에서 다음줄로 내려오기
+/*word-wrap:break-word;*/
+word-break:break-all;
