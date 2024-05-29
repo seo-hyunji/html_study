@@ -39,5 +39,5 @@ footer {height: 100px; background-color: gray;}
 
 /*작은 기계 장치*/
 @media (max-width:550px) {
-    #popup {width:100%;}
+    #popup {width: 100%; left: 0%;}
 }
