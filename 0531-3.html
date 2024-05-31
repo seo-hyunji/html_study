@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type속성사용하여 폼만들고, 스크립트에 value값 vytl</title>
+    <style>
+        form {max-width: 400px; margin:auto;}
+        fieldset { padding:30px;}
+        p> input {float:right;}
+        input:not(#color, [type="radio"], [type="checkbox"]) {
+            width:200px;
+        }
+        button:not([type="reset"]) {border:0;}
+        button img {width:130px; }
+        header {
+            padding: 40px;
+            border: 5px solid red;
+        }
+        footer {
+            padding: 40px;
+            border: 5px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>type 속성</legend>
+            <p><label for='id'>아이디</label>   <input type="text" id="id"></p>
+            <p><label for="pw">비밀번호</label> <input type="password" id="pw"></p>
+            <p><label for="search">검색</label> <input type='search' id="search"></p>
+            <p><label for="email">이메일</label><input type='email' id='email'></p>
+            <p><label for="tel">전화번호</label><input type="tel" id="tel"></p>
+            <p><label for="color">컬러선택</label><input type='color' id="color"></p>
+            <p><label for="number">수량</label> <input type='number' id='number'></p>
+            <p><label for='range'>만족도</label><input type='range' id='range'></p>
+            <p>
+                이메일수신여부:<br>
+                <span>
+                    <input type="radio" id="yes" value="수신함" name="mail"><label for="yes">예</label>
+                    <input type="radio" id="no" value="수신안함" name="mail"><label for="no">아니오</label>
+                </span>
+            </p>
+            <p>
+                취미 다중선택:<br>
+                <span>
+                    <input type="checkbox" id="h1" value="등산" name="hobby"><label for="h1">등산</label> 
+                    <input type="checkbox" id="h2" value="낚시" name="hobby"><label for="h2">낚시</label> 
+                    <input type="checkbox" id="h3" value="헬스" name="hobby"><label for="h3">헬스</label> 
+                    <input type="checkbox" id="h4" value="독서" name="hobby"><label for="h4">독서</label> 
+                    <input type="checkbox" id="h5" value="영화감상" name="hobby"><label for="h5">영화감상</label> 
+                    <input type="checkbox" id="h6" value="게임" name="hobby"><label for="h6">게임</label>
+                </span>
+            </p>
+           
+            <p><label for='file'>파일선택</label><input type='file' id='file'></p>
+            <button type="button"><img src="images/send_button.jpg" alt="보내기"></button>
+            <!--<input type="image"  src="images/send_button.jpg" alt="보내기">-->
+            <button type="reset" id="reset">취소하기</button>
+        </fieldset>
+    </form>
+    <footer></footer>
+    <script>
+        const f1 = document.querySelector("#id");
+        const f2 = document.querySelector("#pw");
+        const f3 = document.querySelector("#search");
+        const f4 = document.querySelector("#email");
+        const f5 = document.querySelector("#tel");
+        const f6 = document.querySelector("#color");
+        const f7 = document.querySelector("#number");
+        const f8 = document.querySelector("#range");
+
+        const he = document.querySelector("header");
+
+        const btn = document.querySelector("button");
+
+        btn.addEventListener("click", bb);
+        
+
+
+        function bb() {
+            //alert(f1.value);
+            
+            const hh = document.querySelectorAll("input[name=hobby]:checked");
+            for(const i of hh) {
+                he.innerHTML += i.value + "...";
+            }
+
+            //he.innerHTML = f1.value;
+        }
+
+            const x = [10, 20, 30, 40, 50];
+            for(const i of x){
+                document.querySelector("footer").innerHTML += i + "<br>";
+            }
+            //x 값들을 <footer>에 i를 모두 대입할 때까지 반복
+    </script>
+</body>
+</html>
