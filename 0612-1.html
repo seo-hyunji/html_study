@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공이 좌우 상하로 무한 반복하는 스크립트</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        #layout {
+            max-width: 700px; /*margin: auto;*/
+            border: 5px solid pink; position: relative;
+            height: 100vh;
+        }
+        #b1 , #b2 {
+            width: 100px; height: 100px;
+            border-radius: 50%; position: absolute;
+            background: radial-gradient(pink, aqua ,black 90% );
+        }
+        #b1 {top: 100px; left: 0; }
+        #b2 {top: 0; left:calc((100% - 100px) / 2); }
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <h1>공이 좌우 상하로 무한 반복한다.</h1>
+        <div id="b1"></div>
+        <div id="b2"></div>
+    </div>
+    <script>
+        const $b1 = document.querySelector('#b1'); // 왼쪽 이동 공 객체
+        const $b2 = document.querySelector('#b2'); // 아래쪽 이동 공 객체
+        const $layout = document.querySelector('#layout') // 공들이 들어있는 박스
+        
+        
+        let i = 0; //왼쪽 공 위치(x좌표)
+        let j = 0;
+        
+        let sp2 = 10;
+        let sp1 = 10; //속도 (숫자 증가 시 속도 증가) 
+        
+        let layW = $layout.clientWidth; //최대 넓이
+        let layH = $layout.clientHeight; //최대 높이
+        
+        let ballpx = $b1.clientWidth; //공의 지름 (패딩)
+        
+        setInterval(() => move(), 10) //0.01초 마다 move()함수 호출한다.
+        
+        move = () => {
+            i += sp1;
+            j += sp2; // i = i + sp; // 0 = 0 + 10 // 0에서 10을 더한 후 0은 10이 된다. 10은 i이다
+
+            //반대방향으로 리턴
+            if ( i+ballpx >= layW || i <= 0 ) sp1 *= -1; // sp = sp * (-1); // sp = 10*(-1); // sp = -10
+            if ( j+ballpx >= layH || j <= 0 ) sp2 *= -1;
+
+            $b1.style.left = `${i}px`; 
+            $b2.style.top = `${j}px`;
+        }
+
+        
+    </script>
+</body>
+</html>
